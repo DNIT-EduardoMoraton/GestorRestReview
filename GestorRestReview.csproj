@@ -55,6 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MainWindowVM.cs" />
+    <Compile Include="Mensajes\Difusion\ExampleRequestMessage.cs" />
+    <Compile Include="Mensajes\Solicitud\ExampleValueChangedMessage.cs" />
+    <Compile Include="Servicios\ExampleService.cs" />
+    <Compile Include="Vistas\UserControls\Example\ExampleUserControl.xaml.cs">
+      <DependentUpon>ExampleUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\Example\ExampleUserControlVM.cs" />
+    <Compile Include="Vistas\Windows\Example\ExampleWindow.xaml.cs">
+      <DependentUpon>ExampleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Windows\Example\ExampleWindowVM.xaml.cs">
+      <DependentUpon>ExampleWindowVM.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +81,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Vistas\UserControls\Example\ExampleUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Windows\Example\ExampleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Windows\Example\ExampleWindowVM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,6 +119,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\cat_0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
