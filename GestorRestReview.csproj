@@ -63,6 +63,9 @@
       <DependentUpon>ExampleUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\UserControls\Example\ExampleUserControlVM.cs" />
+    <Compile Include="Vistas\UserControls\Home\HomeUserControl.xaml.cs">
+      <DependentUpon>HomeUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Windows\Example\ExampleWindow.xaml.cs">
       <DependentUpon>ExampleWindow.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Vistas\UserControls\Example\ExampleUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\UserControls\Home\HomeUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,7 +127,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Vistas\UserControls\Articulos\GestionarArticulos\" />
+    <Folder Include="Vistas\UserControls\Articulos\ModerarAtrticulos\" />
+    <Folder Include="Vistas\UserControls\Autores\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\cat_0.png" />
   </ItemGroup>
