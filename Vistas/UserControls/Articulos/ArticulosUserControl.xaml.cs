@@ -9,22 +9,20 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GestorRestReview
+namespace GestorRestReview.Vistas.UserControls.Articulos
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para ArticulosUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ArticulosUserControl : UserControl
     {
-        private MainWindowVM vm;
-        public MainWindow()
+        public ArticulosUserControl()
         {
             InitializeComponent();
-            vm = new MainWindowVM();
-            this.DataContext = vm;
         }
     }
 }
