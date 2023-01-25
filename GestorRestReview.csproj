@@ -119,6 +119,9 @@
     <Compile Include="MainWindowVM.cs" />
     <Compile Include="Mensajes\Difusion\ExampleRequestMessage.cs" />
     <Compile Include="Mensajes\Solicitud\ExampleValueChangedMessage.cs" />
+    <Compile Include="Modelo\Articulo.cs" />
+    <Compile Include="Modelo\Autor.cs" />
+    <Compile Include="Modelo\Seccion.cs" />
     <Compile Include="Servicios\ExampleService.cs" />
     <Compile Include="Servicios\NavegacionServicio.cs" />
     <Compile Include="Vistas\UserControls\Articulos\ArticulosUserControl.xaml.cs">
@@ -208,6 +211,7 @@
   <ItemGroup>
     <Resource Include="Assets\cat_0.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
