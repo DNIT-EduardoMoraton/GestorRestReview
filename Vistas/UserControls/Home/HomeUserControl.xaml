@@ -14,6 +14,7 @@
         DisplayMode="Expanded"
         Background="Transparent">
         <syncfusion:NavigationItem
+                Command="{Binding HomeWebPreview}"
                 IsSelected="True"
                 Header="Home">
             <syncfusion:NavigationItem.Icon>

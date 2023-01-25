@@ -22,7 +22,8 @@ namespace GestorRestReview.Vistas.UserControls.Home
 
         // Commands
 
-        private RelayCommand ArticuloComand { get; set; }
+        public RelayCommand ArticuloComand { get; set; }
+        public RelayCommand HomeWebPreview { get; set; }
 
         // Services
 
@@ -40,11 +41,13 @@ namespace GestorRestReview.Vistas.UserControls.Home
         private void InicioPorDefecto()
         {
             ActualUserControl = servicioNavegacion.IrHomeWebPreview();
+           
         }
 
         private void ManejadorCommands()
         {
             ArticuloComand = new RelayCommand(ArticuloCommandFun);
+            HomeWebPreview = new RelayCommand(HomeWebPreviewFun);
         }
 
         // Commands Funcs
@@ -52,6 +55,11 @@ namespace GestorRestReview.Vistas.UserControls.Home
         private void ArticuloCommandFun()
         {
             ActualUserControl = servicioNavegacion.IrArticulosUserControl(); // ver que no se tiene que eliminar
+        }
+
+        private void HomeWebPreviewFun()
+        {
+            ActualUserControl = servicioNavegacion.IrHomeWebPreview();
         }
     }
 }
