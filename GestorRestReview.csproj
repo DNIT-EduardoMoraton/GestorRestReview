@@ -95,6 +95,12 @@
     <Compile Include="Modelo\Seccion.cs" />
     <Compile Include="Servicios\ExampleService.cs" />
     <Compile Include="Servicios\NavegacionServicio.cs" />
+    <Compile Include="Vistas\UserControls\ArticulosGestionar\ArticuloGestionarUserControl.xaml.cs">
+      <DependentUpon>ArticuloGestionarUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\ArticulosLista\ArticulosListaUserControl.xaml.cs">
+      <DependentUpon>ArticulosListaUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\UserControls\Articulos\ArticulosUserControl.xaml.cs">
       <DependentUpon>ArticulosUserControl.xaml</DependentUpon>
     </Compile>
@@ -125,6 +131,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Vistas\UserControls\ArticulosGestionar\ArticuloGestionarUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\UserControls\ArticulosLista\ArticulosListaUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vistas\UserControls\Articulos\ArticulosUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
