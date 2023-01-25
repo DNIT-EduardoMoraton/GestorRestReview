@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestorRestReview.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -11,37 +12,39 @@ namespace GestorRestReview
     {
         private string _connectionString;
 
-        public ClienteDAL(string connectionString)
+        public ClienteDAL()
         {
-            _connectionString = connectionString;
+            _connectionString = "Data Source=BDRevista.db";
         }
 
-        public List<Cliente> GetAllClientes()
+        public List<Articulo> GetAllClientes()
         {
-            List<Cliente> clientes = new List<Cliente>();
+            List<Articulo> articulos = new List<Articulo>();
 
             using (SQLiteConnection conn = new SQLiteConnection(_connectionString))
             {
                 conn.Open();
-                string sql = "SELECT * FROM clientes";
+                string sql = "SELECT * FROM Articulo";
                 SQLiteCommand command = new SQLiteCommand(sql, conn);
                 SQLiteDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    int id = Convert.ToInt32(reader["id"]);
-                    string nombre = reader["nombre"].ToString();
-                    string apellido = reader["apellido"].ToString();
-                    string email = reader["email"].ToString();
+                    int id = Convert.ToInt32(reader["Id"]);
+                    int idAutor = Convert.ToInt32(reader["IdAutor"]);
+                    int idSeccion = Convert.ToInt32(reader["IdSeccion"]);
+                    string titulo = reader["Titulo"].ToString();
+                    string imagen = reader["Imagen"].ToString();
+                    string texto = reader["Texto"].ToString();
 
-                    clientes.Add(new Cliente(id, nombre, apellido, email));
+                    articulos.Add(new Articulo(id, idAutor, idSeccion, titulo, imagen,texto));
                 }
             }
-
-            return clientes;
+            Console.WriteLine(articulos.ToString());
+            return articulos;
         }
 
-        public void AddCliente(Cliente cliente)
+        /*public void AddCliente(Cliente cliente)
         {
             using (SQLiteConnection conn = new SQLiteConnection(_connectionString))
             {
@@ -80,6 +83,6 @@ namespace GestorRestReview
                 command.Parameters.AddWithValue("@id", id);
                 command.ExecuteNonQuery();
             }
-        }
+        }*/
     }
 }
