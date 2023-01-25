@@ -134,6 +134,7 @@
     <Compile Include="Vistas\UserControls\ArticulosLista\ArticulosListaUserControl.xaml.cs">
       <DependentUpon>ArticulosListaUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\UserControls\ArticulosLista\ArticulosListaUserControlVM.cs" />
     <Compile Include="Vistas\UserControls\Articulos\ArticulosUserControl.xaml.cs">
       <DependentUpon>ArticulosUserControl.xaml</DependentUpon>
     </Compile>
