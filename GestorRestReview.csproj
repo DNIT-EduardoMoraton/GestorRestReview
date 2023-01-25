@@ -109,6 +109,9 @@
       <DependentUpon>ExampleUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\UserControls\Example\ExampleUserControlVM.cs" />
+    <Compile Include="Vistas\UserControls\HomeWebPreview\HomeWebPreview.xaml.cs">
+      <DependentUpon>HomeWebPreview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\UserControls\Home\HomeUserControl.xaml.cs">
       <DependentUpon>HomeUserControl.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\UserControls\Example\ExampleUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\UserControls\HomeWebPreview\HomeWebPreview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

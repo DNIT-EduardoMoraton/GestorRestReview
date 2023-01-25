@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GestorRestReview.Vistas.UserControls.Home
+namespace GestorRestReview.Vistas.UserControls.HomeWebPreview
 {
     /// <summary>
-    /// Lógica de interacción para HomeUserControl.xaml
+    /// Lógica de interacción para HomeWebPreview.xaml
     /// </summary>
-    public partial class HomeUserControl : UserControl
+    public partial class HomeWebPreview : UserControl
     {
-        private HomeUserControlVM vm;
-        public HomeUserControl()
+        public HomeWebPreview()
         {
             InitializeComponent();
-            vm = new HomeUserControlVM();
-            this.DataContext = vm;
         }
     }
 }
