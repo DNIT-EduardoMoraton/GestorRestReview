@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:GestorRestReview.Vistas.UserControls.Articulos"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <ContentControl Content="{Binding CurrUserControl}">
-        
-    </ContentControl>
+    <Grid Background="RED">
+        <TextBlock>ARTICULOS</TextBlock>
+    </Grid>
 </UserControl>
