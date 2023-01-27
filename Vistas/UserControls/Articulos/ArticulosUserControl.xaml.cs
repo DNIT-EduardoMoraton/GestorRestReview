@@ -20,9 +20,12 @@ namespace GestorRestReview.Vistas.UserControls.Articulos
     /// </summary>
     public partial class ArticulosUserControl : UserControl
     {
+        private ArticulosUserControlVM vm;
         public ArticulosUserControl()
         {
             InitializeComponent();
+            vm = new ArticulosUserControlVM();
+            this.DataContext = vm;
         }
     }
 }
