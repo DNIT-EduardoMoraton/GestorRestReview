@@ -23,6 +23,14 @@ namespace GestorRestReview.Vistas.UserControls.HomeWebPreview
         public HomeWebPreview()
         {
             InitializeComponent();
+
+            DAOArticulos hola = new DAOArticulos();
+
+            
+
+            texto.Text = hola.GetAllClientes().ToString();
+
+
         }
     }
 }

@@ -8,24 +8,23 @@ using System.Threading.Tasks;
 
 namespace GestorRestReview
 {
-    public class ClienteDAL
+    public class DAOArticulos
     {
         private string _connectionString;
+        SQLiteConnection connection;
 
-        public ClienteDAL()
+        public DAOArticulos()
         {
             _connectionString = "Data Source=BDRevista.db";
+            connection = new SQLiteConnection(_connectionString);
+            connection.Open();
         }
 
-        public List<Articulo> GetAllClientes()
+        public List<Articulo> GetAllArticulos()
         {
             List<Articulo> articulos = new List<Articulo>();
-
-            using (SQLiteConnection conn = new SQLiteConnection(_connectionString))
-            {
-                conn.Open();
-                string sql = "SELECT * FROM Articulo";
-                SQLiteCommand command = new SQLiteCommand(sql, conn);
+                string sql = "SELECT * FROM Articulo;";
+                SQLiteCommand command = new SQLiteCommand(sql, connection);
                 SQLiteDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
@@ -39,50 +38,73 @@ namespace GestorRestReview
 
                     articulos.Add(new Articulo(id, idAutor, idSeccion, titulo, imagen,texto));
                 }
-            }
             Console.WriteLine(articulos.ToString());
             return articulos;
         }
 
-        /*public void AddCliente(Cliente cliente)
+        public Articulo GetOneArticulo(int id)
         {
-            using (SQLiteConnection conn = new SQLiteConnection(_connectionString))
+            Articulo articulo = null;
+            using (var command = new SQLiteCommand(connection))
             {
-                conn.Open();
-                string sql = "INSERT INTO clientes (nombre, apellido, email) VALUES (@nombre, @apellido, @email)";
-                SQLiteCommand command = new SQLiteCommand(sql, conn);
-                command.Parameters.AddWithValue("@nombre", cliente.Nombre);
-                command.Parameters.AddWithValue("@apellido", cliente.Apellido);
-                command.Parameters.AddWithValue("@email", cliente.Email);
-                command.ExecuteNonQuery();
-            }
-        }
-
-        public void UpdateCliente(Cliente cliente)
-        {
-            using (SQLiteConnection conn = new SQLiteConnection(_connectionString))
-            {
-                conn.Open();
-                string sql = "UPDATE clientes SET nombre = @nombre, apellido = @apellido, email = @email WHERE id = @id";
-                SQLiteCommand command = new SQLiteCommand(sql, conn);
-                command.Parameters.AddWithValue("@nombre", cliente.Nombre);
-                command.Parameters.AddWithValue("@apellido", cliente.Apellido);
-                command.Parameters.AddWithValue("@email", cliente.Email);
-                command.Parameters.AddWithValue("@id", cliente.Id);
-                command.ExecuteNonQuery();
-            }
-        }
-
-        public void DeleteCliente(int id)
-        {
-            using (SQLiteConnection conn = new SQLiteConnection(_connectionString))
-            {
-                conn.Open();
-                string sql = "DELETE FROM clientes WHERE id = @id";
-                SQLiteCommand command = new SQLiteCommand(sql, conn);
+                command.CommandText = "SELECT * FROM articulos WHERE id = @id";
                 command.Parameters.AddWithValue("@id", id);
-                command.ExecuteNonQuery();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        articulo = new Articulo();
+                        articulo.Id = reader.GetInt32(0);
+                        articulo.IdAutor = reader.GetInt32(1);
+                        articulo.IdSeccion = reader.GetInt32(2);
+                        articulo.Titulo = reader.GetString(3);
+                        articulo.Texto = reader.GetString(4);
+                        articulo.Imagen = reader.GetString(5);
+                    }
+                }
             }
-        }*/
+            return articulo;
+        }
+
+        public void InsertarArticulo(Articulo articulo)
+        {
+            // Inserta un nuevo articulo en la tabla
+            string sql = "INSERT INTO articulos (idAutor, idSeccion, titulo, texto, imagen) VALUES (@idAutor, @idSeccion, @titulo, @texto, @imagen)";
+            SQLiteCommand command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@idAutor", articulo.IdAutor);
+            command.Parameters.AddWithValue("@idSeccion", articulo.IdSeccion);
+            command.Parameters.AddWithValue("@titulo", articulo.Titulo);
+            command.Parameters.AddWithValue("@texto", articulo.Texto);
+            command.Parameters.AddWithValue("@imagen", articulo.Imagen);
+            command.ExecuteNonQuery();
+        }
+
+
+        public void UpdateArticulo(Articulo articulo)
+        {
+            // Actualiza un articulo existente en la tabla
+            string sql = "UPDATE articulos SET idAutor = @idAutor, idSeccion = @idSeccion, titulo = @titulo, texto = @texto, imagen = @imagen WHERE id = @id";
+            SQLiteCommand command = new SQLiteCommand(sql, connection);
+            command.Parameters.AddWithValue("@idAutor", articulo.IdAutor);
+            command.Parameters.AddWithValue("@idSeccion", articulo.IdSeccion);
+            command.Parameters.AddWithValue("@titulo", articulo.Titulo);
+            command.Parameters.AddWithValue("@texto", articulo.Texto);
+            command.Parameters.AddWithValue("@imagen", articulo.Imagen);
+            command.Parameters.AddWithValue("@id", articulo.Id);
+            command.ExecuteNonQuery();
+        }
+
+        public int DeleteArticulo(int id)
+        {
+            int rowsAffected = 0;
+            using (var command = new SQLiteCommand(connection))
+            {
+                command.CommandText = "DELETE FROM articulos WHERE id = @id";
+                command.Parameters.AddWithValue("@id", id);
+                rowsAffected = command.ExecuteNonQuery();
+            }
+            return rowsAffected;
+        }
     }
 }
