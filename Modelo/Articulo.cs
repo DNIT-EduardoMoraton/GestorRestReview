@@ -15,6 +15,12 @@ namespace GestorRestReview.Modelo
         private string titulo;
         private string imagen;
 
+        public Articulo()
+        {
+        }
+
+
+
         // Constructor
         public Articulo(int id, int idAutor, int idSeccion, string texto, string titulo, string imagen)
         {
@@ -62,5 +68,7 @@ namespace GestorRestReview.Modelo
             get { return imagen; }
             set { imagen = value; }
         }
+
+
     }
 }
