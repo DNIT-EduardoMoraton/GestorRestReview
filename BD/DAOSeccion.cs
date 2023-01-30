@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace GestorRestReview.BD
 {
-    public class SeccionDAO
+    public class DAOSeccion
     {
         private SQLiteConnection connection;
         private string _connectionString;
 
 
-        public SeccionDAO()
+        public DAOSeccion()
         {
             _connectionString = "Data Source=BDRevista.db";
             connection = new SQLiteConnection(_connectionString);

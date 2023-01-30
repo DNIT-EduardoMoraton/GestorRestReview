@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GestorRestReview.Modelo
 {
-    public class Articulo
+    class Articulo
     {
         private int id;
         private int idAutor;
@@ -14,12 +15,6 @@ namespace GestorRestReview.Modelo
         private string texto;
         private string titulo;
         private string imagen;
-
-        public Articulo()
-        {
-        }
-
-
 
         // Constructor
         public Articulo(int id, int idAutor, int idSeccion, string texto, string titulo, string imagen)
@@ -68,7 +63,5 @@ namespace GestorRestReview.Modelo
             get { return imagen; }
             set { imagen = value; }
         }
-
-
     }
 }
