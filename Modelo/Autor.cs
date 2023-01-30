@@ -13,14 +13,16 @@ namespace GestorRestReview.Modelo
         private string nombre;
         private string imagen;
         private string nickName;
+        private string redsocial;
 
         // Constructor
-        public Autor(int id, string nombre, string imagen, String nickName)
+        public Autor(int id, string nombre, string imagen, string nickName, string redsocial)
         {
             this.id = id;
             this.nombre = nombre;
             this.imagen = imagen;
             this.nickName = nickName;
+            this.redsocial = redsocial;
         }
 
         // Getters y Setters
@@ -46,6 +48,12 @@ namespace GestorRestReview.Modelo
         {
             get { return nickName; }
             set { nickName = value; }
+        }
+
+        public string Redsocial
+        {
+            get { return redsocial; }
+            set { redsocial = value; }
         }
     }
 

@@ -23,21 +23,21 @@ namespace GestorRestReview
         public List<Articulo> GetAllArticulos()
         {
             List<Articulo> articulos = new List<Articulo>();
-                string sql = "SELECT * FROM Articulo;";
-                SQLiteCommand command = new SQLiteCommand(sql, connection);
-                SQLiteDataReader reader = command.ExecuteReader();
+            string sql = "SELECT * FROM Articulo;";
+            SQLiteCommand command = new SQLiteCommand(sql, connection);
+            SQLiteDataReader reader = command.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    int id = Convert.ToInt32(reader["Id"]);
-                    int idAutor = Convert.ToInt32(reader["IdAutor"]);
-                    int idSeccion = Convert.ToInt32(reader["IdSeccion"]);
-                    string titulo = reader["Titulo"].ToString();
-                    string imagen = reader["Imagen"].ToString();
-                    string texto = reader["Texto"].ToString();
+            while (reader.Read())
+            {
+                int id = Convert.ToInt32(reader["id"]);
+                int idAutor = Convert.ToInt32(reader["idAutor"]);
+                int idSeccion = Convert.ToInt32(reader["idSeccion"]);
+                string titulo = reader["titulo"].ToString();
+                string imagen = reader["imagen"].ToString();
+                string texto = reader["texto"].ToString();
 
-                    articulos.Add(new Articulo(id, idAutor, idSeccion, titulo, imagen,texto));
-                }
+                articulos.Add(new Articulo(id, idAutor, idSeccion, titulo, imagen, texto));
+            }
             Console.WriteLine(articulos.ToString());
             return articulos;
         }
@@ -106,5 +106,6 @@ namespace GestorRestReview
             }
             return rowsAffected;
         }
+
     }
 }
