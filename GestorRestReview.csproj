@@ -158,6 +158,7 @@
     <Compile Include="BD\DAOArticulos.cs" />
     <Compile Include="BD\DAOAutores.cs" />
     <Compile Include="BD\DAOSeccion.cs" />
+    <Compile Include="BD\SeccionService.cs" />
     <Compile Include="MainWindowVM.cs" />
     <Compile Include="Mensajes\Difusion\ExampleRequestMessage.cs" />
     <Compile Include="Mensajes\Solicitud\ExampleValueChangedMessage.cs" />
