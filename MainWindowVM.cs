@@ -20,8 +20,6 @@ namespace GestorRestReview
         }
 
 
-
-
         // Servicios
 
         private NavegacionServicio servicioNavegacion;
