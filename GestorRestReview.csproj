@@ -107,6 +107,7 @@
     <Compile Include="Vistas\UserControls\ArticulosGestionar\ArticuloGestionarUserControl.xaml.cs">
       <DependentUpon>ArticuloGestionarUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\UserControls\ArticulosGestionar\ArticuloGestionarUserControlVM.cs" />
     <Compile Include="Vistas\UserControls\ArticulosLista\ArticulosListaUserControl.xaml.cs">
       <DependentUpon>ArticulosListaUserControl.xaml</DependentUpon>
     </Compile>
