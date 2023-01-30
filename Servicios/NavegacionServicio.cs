@@ -43,8 +43,8 @@ namespace GestorRestReview.Servicios
 
         public ArticulosListaUserControl irArticulosListaUserControl()
         {
-            return new HomeWebPreview();
-        } 
-        
+            return new ArticulosListaUserControl();
+        }
+
     }
 }
