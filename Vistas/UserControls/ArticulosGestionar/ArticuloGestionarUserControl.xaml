@@ -4,9 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestorRestReview.Vistas.UserControls.ArticulosGestionar"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+             xmlns:Syncfusion="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
+             xmlns:inputLayout="clr-namespace:Syncfusion.UI.Xaml.TextInputLayout;assembly=Syncfusion.SfTextInputLayout.WPF"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">
+            <syncfusion:ButtonAdv Margin="20" DockPanel.Dock="Right" SizeMode="Small" Width="20" SmallIcon="/GestorRestReview;component/Assets/iconos/check.ico"/>
+        </DockPanel>
+
+        <DockPanel>
+            <inputLayout:SfTextInputLayout DockPanel.Dock="Top" Hint="Titulo" ContainerType="Filled" Margin="20">
+                <TextBox/>
+            </inputLayout:SfTextInputLayout>
+
+            <syncfusion:ButtonAdv Margin="20" DockPanel.Dock="Top" SizeMode="Small" Width="20" SmallIcon="/GestorRestReview;component/Assets/iconos/check.ico"/>
+            <inputLayout:SfTextInputLayout Hint="Contenido" ContainerType="Outlined" Margin="20">
+                <TextBox Height="100"/>
+            </inputLayout:SfTextInputLayout>
+        </DockPanel>
+        
+    </DockPanel>
 </UserControl>
