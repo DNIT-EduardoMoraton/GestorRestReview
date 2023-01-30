@@ -132,12 +132,12 @@ namespace GestorRestReview.BD
             }
         }
 
-        public void DeleteSeccion(Seccion seccion)
+        public void DeleteSeccion(int id)
         {
             using (var command = connection.CreateCommand())
             {
                 command.CommandText = "DELETE FROM secciones WHERE id = @id";
-                command.Parameters.AddWithValue("@id", seccion.Id);
+                command.Parameters.AddWithValue("@id", id);
 
                 try
                 {

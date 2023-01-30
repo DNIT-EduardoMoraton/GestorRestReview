@@ -28,8 +28,6 @@ namespace GestorRestReview.Vistas.UserControls.HomeWebPreview
 
             
 
-            texto.Text = hola.GetAllClientes().ToString();
-
 
         }
     }

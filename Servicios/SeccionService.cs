@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace GestorRestReview.BD
 {
-    class SeccionService
+    class SeccionService 
     {
         private DAOSeccion seccionDAO;
+        // Todo el servicio debe devolver un booleano o un objeto o lista de objetos o en su defecto Null
 
         public SeccionService()
         {
@@ -26,9 +27,9 @@ namespace GestorRestReview.BD
             seccionDAO.UpdateSeccion(seccion);
         }
 
-        public int DeleteSeccion(int id)
+        public void DeleteSeccion(int id)
         {
-            return seccionDAO.DeleteSeccion(id);
+            seccionDAO.DeleteSeccion(id);
         }
 
         public Seccion GetSeccion(int id)
