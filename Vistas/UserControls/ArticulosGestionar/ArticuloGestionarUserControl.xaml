@@ -19,12 +19,13 @@
                 <TextBox/>
             </inputLayout:SfTextInputLayout>
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="200">
-                <syncfusion:ButtonAdv Margin="20" Width="200" Label="Examinar" SmallIcon="/GestorRestReview;component/Assets/iconos/check.ico"/>
+                <inputLayout:SfTextInputLayout Hint="Contenido" ContainerType="Outlined" Margin="20">
+                    <TextBox Height="150" Width="500"/>
+                </inputLayout:SfTextInputLayout>
                 <Image Width="200"></Image>
+                
             </StackPanel>
-            <inputLayout:SfTextInputLayout Hint="Contenido" ContainerType="Outlined" Margin="20">
-                <TextBox Height="100"/>
-            </inputLayout:SfTextInputLayout>
+            <syncfusion:ButtonAdv Margin="20" Width="200" Label="Examinar" SmallIcon="/GestorRestReview;component/Assets/iconos/check.ico"/>
         </DockPanel>
         
     </DockPanel>
