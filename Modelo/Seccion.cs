@@ -10,6 +10,8 @@ namespace GestorRestReview.Modelo
     public class Seccion : ObservableObject
     {
         // Getters y Setters
+        // Investigar como de posible es de usar aqui un arraylist que se complete cuando se hace una llmada al DAO para poder usar un mismo objeto Seccion para ver todos los articulos
+
         private int id;
         public int Id
         {

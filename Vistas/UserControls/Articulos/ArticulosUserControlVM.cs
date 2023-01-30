@@ -1,5 +1,7 @@
-﻿using GestorRestReview.Servicios;
+﻿using GestorRestReview.Mensajes.Difusion;
+using GestorRestReview.Servicios;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,12 +34,27 @@ namespace GestorRestReview.Vistas.UserControls.Articulos
         {
             servicioNavegacion = new NavegacionServicio();
             InicioPorDefecto();
-            
+
+
+            ManejadorMensajes();
         }
+
 
         private void InicioPorDefecto()
         {
             CurrUserControl = servicioNavegacion.irArticulosListaUserControl();
+        }
+
+
+        private void ManejadorMensajes()
+        {
+            WeakReferenceMessenger.Default.Register<ArticuloNavValueChangedMesage>(this, (r, m) =>
+            {
+                if (m.Value)
+                {
+                    CurrUserControl = servicioNavegacion.irArticulosGestionarUserControl();
+                }
+            });
         }
     }
 }

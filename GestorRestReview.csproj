@@ -168,6 +168,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Mensajes\Difusion\ArticuloNavValueChangedMesage.cs" />
     <Compile Include="Servicios\ArticuloService.cs" />
     <Compile Include="Servicios\AutoresService.cs" />
     <Compile Include="BD\DAOArticulos.cs" />
@@ -175,14 +176,12 @@
     <Compile Include="BD\DAOSeccion.cs" />
     <Compile Include="Servicios\SeccionService.cs" />
     <Compile Include="MainWindowVM.cs" />
-    <Compile Include="Mensajes\Difusion\ExampleRequestMessage.cs" />
     <Compile Include="Mensajes\Solicitud\ExampleValueChangedMessage.cs" />
     <Compile Include="Modelo\Articulo.cs" />
     <Compile Include="Modelo\Autor.cs" />
     <Compile Include="Modelo\Seccion.cs" />
-    <Compile Include="Servicios\ExampleService.cs" />
     <Compile Include="Servicios\NavegacionServicio.cs" />
-    <Compile Include="Servicios\ServicioDeAlerta.cs" />
+    <Compile Include="Servicios\AlertaServicio.cs" />
     <Compile Include="Vistas\UserControls\ArticulosGestionar\ArticuloGestionarUserControl.xaml.cs">
       <DependentUpon>ArticuloGestionarUserControl.xaml</DependentUpon>
     </Compile>

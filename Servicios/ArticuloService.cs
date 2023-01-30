@@ -18,12 +18,12 @@ namespace GestorRestReview.BD
 
         public List<Articulo> GetAllArticulos()
         {
-            return articuloDAO.GetAllArticulos();
+            return articuloDAO.GetAllArticulos(); // Igual que en el get one
         }
 
         public Articulo GetArticuloById(int id)
         {
-            return articuloDAO.GetOneArticulo(id);
+            return articuloDAO.GetOneArticulo(id); // Anyadir un campo autor que se complete desde aqui para poder acceder al autor
         }
 
         public void InsertArticulo(Articulo articulo)
@@ -40,5 +40,8 @@ namespace GestorRestReview.BD
         {
             articuloDAO.DeleteArticulo(id);
         }
+
+        // Necesitamos 
+        // Todos los articulos de una categoria ordenados por fecha de adicion a la base de datos
     }
 }

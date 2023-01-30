@@ -1,7 +1,9 @@
-﻿using GestorRestReview.Modelo;
+﻿using GestorRestReview.Mensajes.Difusion;
+using GestorRestReview.Modelo;
 using GestorRestReview.Servicios;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
+using Microsoft.Toolkit.Mvvm.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,8 +35,30 @@ namespace GestorRestReview.Vistas.UserControls.ArticulosLista
 
         public ArticulosListaUserControlVM()
         {
+            servicioNavegacion = new NavegacionServicio();
+            InicioPorDefecto();
+
+            ManejadorCommands();
+        }
+
+
+        private void InicioPorDefecto()
+        {
 
         }
+
+        private void ManejadorCommands()
+        {
+            AnyadirArticuloCommand = new RelayCommand(AnyadirArticuloCommandFun);
+        }
+
+        // Commands functions
+
+        private void AnyadirArticuloCommandFun()
+        {
+            WeakReferenceMessenger.Default.Send(new ArticuloNavValueChangedMesage(true));
+        }
+
 
     }
 }

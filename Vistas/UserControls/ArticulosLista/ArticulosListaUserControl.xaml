@@ -9,7 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
         <syncfusion:SfDataGrid  x:Name="dataGrid"/>
-        
-        <syncfusion:ButtonAdv Margin="20" DockPanel.Dock="Right" SizeMode="Small" Width="20" SmallIcon="/GestorRestReview;component/Assets/iconos/check.ico"/>
+
+        <syncfusion:ButtonAdv Command="{Binding AnyadirArticuloCommand}" Margin="20" DockPanel.Dock="Right" SizeMode="Small" Width="20" SmallIcon="/GestorRestReview;component/Assets/iconos/check.ico"/>
     </DockPanel>
 </UserControl>

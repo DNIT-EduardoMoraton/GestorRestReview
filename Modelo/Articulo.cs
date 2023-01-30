@@ -10,7 +10,7 @@ namespace GestorRestReview.Modelo
     public class Articulo : ObservableObject
     {
 
-
+        // Ver como de factible es de poner aqui una propiedad que contenga un objeto Autor al que hace refencia
         // Getters y Setters
         private int id;
 

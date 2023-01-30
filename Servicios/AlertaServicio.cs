@@ -7,9 +7,9 @@ using System.Windows;
 
 namespace GestorRestReview.Servicios
 {
-    class ServicioDeAlerta
+    class AlertaServicio
     {
-        public ServicioDeAlerta()
+        public AlertaServicio()
         {
             
         }
@@ -29,7 +29,7 @@ namespace GestorRestReview.Servicios
         }
         public bool MessageBoxError(string mensajeError)
         {
-            MessageBoxResult result = MessageBox.Show(mensajeError, "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            MessageBoxResult result = MessageBox.Show(mensajeError, "OK", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             return true;
         }

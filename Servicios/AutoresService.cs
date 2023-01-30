@@ -21,24 +21,28 @@ namespace GestorRestReview.BD
             autorDAO.InsertAutor(autor);
         }
 
-        public void UpdateAutor(Autor autor)
+        public void UpdateAutor(Autor autor) 
         {
             autorDAO.UpdateAutor(autor);
         }
 
-        public int DeleteAutor(int id)
+        public int DeleteAutor(int id) 
         {
             return autorDAO.DeleteAutor(id);
         }
 
         public Autor GetAutor(int id)
         {
-            return autorDAO.GetOneAutor(id);
+            return autorDAO.GetOneAutor(id); // Que tenga una lista de articulos
         }
 
         public List<Autor> GetAllAutores()
         {
-            return autorDAO.GetAllAutores();
+            return autorDAO.GetAllAutores(); // Que cada uno de los autores tenga una lista de Articulos
         }
+
+
+        
+        
     }
 }
