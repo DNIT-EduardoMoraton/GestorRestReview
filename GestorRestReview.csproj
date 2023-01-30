@@ -129,6 +129,7 @@
     <Compile Include="Modelo\Seccion.cs" />
     <Compile Include="Servicios\ExampleService.cs" />
     <Compile Include="Servicios\NavegacionServicio.cs" />
+    <Compile Include="Servicios\ServicioDeAlerta.cs" />
     <Compile Include="Vistas\UserControls\ArticulosGestionar\ArticuloGestionarUserControl.xaml.cs">
       <DependentUpon>ArticuloGestionarUserControl.xaml</DependentUpon>
     </Compile>
