@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GestorRestReview.Vistas.UserControls.Articulos
+namespace GestorRestReview.Vistas.UserControls.Autores
 {
     /// <summary>
-    /// Lógica de interacción para ArticulosUserControl.xaml
+    /// Lógica de interacción para AutoresUserControl.xaml
     /// </summary>
-    public partial class ArticulosUserControl : UserControl
+    public partial class AutoresUserControl : UserControl
     {
-        private ArticulosUserControlVM vm;
-        public ArticulosUserControl()
+        public AutoresUserControl()
         {
             InitializeComponent();
-            vm = new ArticulosUserControlVM();
-            this.DataContext = vm;
         }
     }
 }
