@@ -25,6 +25,8 @@ namespace GestorRestReview
             InitializeComponent();
             vm = new MainWindowVM();
             this.DataContext = vm;
+
+
         }
     }
 }
