@@ -18,30 +18,13 @@
             <inputLayout:SfTextInputLayout DockPanel.Dock="Top" Hint="Titulo" ContainerType="Filled" Margin="20">
                 <TextBox/>
             </inputLayout:SfTextInputLayout>
-
-            
-            <Syncfusion:StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Left" Margin="20" Orientation="Vertical">
-                <Syncfusion:StackPanel Orientation="Horizontal">
-                    <ComboBox Width="200"></ComboBox>
-                </Syncfusion:StackPanel>
-                <Syncfusion:StackPanel Orientation="Horizontal">
-                    <ComboBox Width="200"></ComboBox>
-                </Syncfusion:StackPanel>
-
-            </Syncfusion:StackPanel>
-            
-            <syncfusion:ButtonAdv DockPanel.Dock="Bottom" Width="100" Label="Subir Imagen" SmallIcon="/GestorRestReview;component/Assets/iconos/check.ico"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*" ></ColumnDefinition>
-                    <ColumnDefinition Width="1*" ></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <inputLayout:SfTextInputLayout Grid.Column="0" Hint="Contenido" ContainerType="Outlined" Margin="20">
-                    <TextBox Height="180"/>
-                </inputLayout:SfTextInputLayout>
-                <Image Grid.Column="1"></Image>
-
-            </Grid>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="200">
+                <syncfusion:ButtonAdv Margin="20" Width="200" Label="Examinar" SmallIcon="/GestorRestReview;component/Assets/iconos/check.ico"/>
+                <Image Width="200"></Image>
+            </StackPanel>
+            <inputLayout:SfTextInputLayout Hint="Contenido" ContainerType="Outlined" Margin="20">
+                <TextBox Height="100"/>
+            </inputLayout:SfTextInputLayout>
         </DockPanel>
         
     </DockPanel>
