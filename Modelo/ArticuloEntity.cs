@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace GestorRestReview.Modelo
 {
-    class Articulo : ObservableObject
+    public class ArticuloEntity : ObservableObject
     {
+
+        // Getters y Setters
         private int id;
 
         public int Id
@@ -17,12 +19,12 @@ namespace GestorRestReview.Modelo
             set { SetProperty(ref id, value); }
         }
 
-        private int autor;
+        private int idAutor;
 
-        public int Autor
+        public int IdAutor
         {
-            get { return autor; }
-            set { SetProperty(ref autor, value); }
+            get { return idAutor; }
+            set { SetProperty(ref idAutor, value); }
         }
 
         private int idSeccion;
@@ -57,17 +59,21 @@ namespace GestorRestReview.Modelo
             set { SetProperty(ref imagen, value); }
         }
 
-        public DateTime fechaPublicacion;
-        public DateTime FechaPublicacion
+        public long fechaPublicacion;
+        public long FechaPublicacion
         {
             get { return fechaPublicacion; }
             set { SetProperty(ref fechaPublicacion, value); }
         }
 
-        public Articulo(int id, int autor, int idSeccion, string texto, string titulo, string imagen, DateTime fechaPublicacion)
+        public ArticuloEntity()
+        {
+        }
+
+        public ArticuloEntity(int id, int idAutor, int idSeccion, string texto, string titulo, string imagen, long fechaPublicacion)
         {
             Id = id;
-            Autor = autor;
+            IdAutor = idAutor;
             IdSeccion = idSeccion;
             Texto = texto;
             Titulo = titulo;

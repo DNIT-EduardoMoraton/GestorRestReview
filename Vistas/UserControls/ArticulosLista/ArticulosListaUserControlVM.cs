@@ -17,9 +17,9 @@ namespace GestorRestReview.Vistas.UserControls.ArticulosLista
     {
         // Getters y Setters
 
-        private Articulo articuloActual;
+        private ArticuloEntity articuloActual;
 
-        public Articulo ArticuloActual
+        public ArticuloEntity ArticuloActual
         {
             get { return articuloActual; }
             set { SetProperty(ref articuloActual, value); }

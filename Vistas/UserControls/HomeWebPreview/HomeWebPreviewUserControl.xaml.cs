@@ -20,9 +20,12 @@ namespace GestorRestReview.Vistas.UserControls.HomeWebPreview
     /// </summary>
     public partial class HomeWebPreviewUserControl : UserControl
     {
+        private HomeWebPreviewUserControlVM vm;
         public HomeWebPreviewUserControl()
         {
             InitializeComponent();
+            vm = new HomeWebPreviewUserControlVM();
+            this.DataContext = vm;
         }
     }
 }

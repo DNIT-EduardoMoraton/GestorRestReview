@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace GestorRestReview.Modelo
 {
-    class Autor : ObservableObject
+    public class AutorEntity : ObservableObject
     {
+        // Getters y Setters
 
         private int id;
 
@@ -43,5 +44,22 @@ namespace GestorRestReview.Modelo
             get { return redsocial; }
             set { SetProperty(ref redsocial, value); }
         }
+
+
+
+        // Constructor
+        public AutorEntity(int id, string nombre, string imagen, string nickName, string redsocial)
+        {
+            this.id = id;
+            this.nombre = nombre;
+            this.imagen = imagen;
+            this.nickName = nickName;
+            this.redsocial = redsocial;
+        }
+
+
     }
+
+
+
 }
