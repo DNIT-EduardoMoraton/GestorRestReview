@@ -20,9 +20,30 @@ namespace GestorRestReview.Modelo
         }
 
         private string nombre;
+        public string Nombre
+        {
+            get { return nombre; }
+            set { SetProperty(ref nombre, value); }
+        }
+
         private string imagen;
+        public string Imagen
+        {
+            get { return imagen; }
+            set { SetProperty(ref imagen, value); }
+        }
         private string nickName;
+        public string NickName
+        {
+            get { return nickName; }
+            set { SetProperty(ref nickName, value); }
+        }
         private string redsocial;
+        public string Redsocial
+        {
+            get { return redsocial; }
+            set { SetProperty(ref redsocial, value); }
+        }
 
 
 

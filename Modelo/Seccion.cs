@@ -20,7 +20,17 @@ namespace GestorRestReview.Modelo
         }
 
         private string nombre;
+        public string Nombre
+        {
+            get { return nombre; }
+            set { SetProperty(ref nombre, value); }
+        }
         private string descripcion;
+        public string Descripcion
+        {
+            get { return descripcion; }
+            set { SetProperty(ref descripcion, value); }
+        }
 
         public Seccion()
         {

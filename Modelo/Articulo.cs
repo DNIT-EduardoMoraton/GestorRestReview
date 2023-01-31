@@ -23,10 +23,44 @@ namespace GestorRestReview.Modelo
         // Hacer para el resto de las propiedades y objetos
 
         private int idAutor;
+
+        public int IdAutor
+        {
+            get { return idAutor; }
+            set { SetProperty(ref idAutor, value); }
+        }
+
         private int idSeccion;
+
+        public int IdSeccion
+        {
+            get { return idSeccion; }
+            set { SetProperty(ref idSeccion, value); }
+        }
+
         private string texto;
+
+        public string Texto
+        {
+            get { return texto; }
+            set { SetProperty(ref texto, value); }
+        }
+
         private string titulo;
+
+        public string Titulo
+        {
+            get { return titulo; }
+            set { SetProperty(ref titulo, value); }
+        }
+
         private string imagen;
+
+        public string Imagen
+        {
+            get { return imagen; }
+            set { SetProperty(ref imagen, value); }
+        }
 
         public Articulo()
         {
@@ -47,8 +81,7 @@ namespace GestorRestReview.Modelo
 
 
         // To String y demas metodos de utilidad son necesarios
-
-
+        
 
     }
 }
