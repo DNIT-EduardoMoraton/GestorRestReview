@@ -2,7 +2,6 @@
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +11,12 @@ namespace GestorRestReview
     public class DAOArticulos
     {
         private string _connectionString;
-        SQLiteConnection connection;
+        SqliteConnection connection;
 
         public DAOArticulos()
         {
             _connectionString = "Data Source=BDRevista.db";
-            connection = new SQLiteConnection(_connectionString);
+            connection = new SqliteConnection(_connectionString);
             connection.Open();
         }
 
@@ -25,8 +24,8 @@ namespace GestorRestReview
         {
             List<Articulo> articulos = new List<Articulo>();
             string sql = "SELECT * FROM Articulo;";
-            SQLiteCommand command = new SQLiteCommand(sql, connection);
-            SQLiteDataReader reader = command.ExecuteReader();
+            SqliteCommand command = new SqliteCommand(sql, connection);
+            SqliteDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
@@ -46,7 +45,7 @@ namespace GestorRestReview
         public Articulo GetOneArticulo(int id)
         {
             Articulo articulo = null;
-            using (var command = new SQLiteCommand(connection))
+            using (var command = new SqliteCommand(connection))
             {
                 command.CommandText = "SELECT * FROM articulos WHERE id = @id";
                 command.Parameters.AddWithValue("@id", id);
@@ -72,7 +71,7 @@ namespace GestorRestReview
         {
             // Inserta un nuevo articulo en la tabla
             string sql = "INSERT INTO articulos (idAutor, idSeccion, titulo, texto, imagen) VALUES (@idAutor, @idSeccion, @titulo, @texto, @imagen)";
-            SQliteCommand command = new SQLiteCommand(sql, connection);
+            SqliteCommand command = new SqliteCommand(sql, connection);
             command.Parameters.AddWithValue("@idAutor", articulo.IdAutor);
             command.Parameters.AddWithValue("@idSeccion", articulo.IdSeccion);
             command.Parameters.AddWithValue("@titulo", articulo.Titulo);
@@ -86,7 +85,7 @@ namespace GestorRestReview
         {
             // Actualiza un articulo existente en la tabla
             string sql = "UPDATE articulos SET idAutor = @idAutor, idSeccion = @idSeccion, titulo = @titulo, texto = @texto, imagen = @imagen WHERE id = @id";
-            SQLiteCommand command = new SQLiteCommand(sql, connection);
+            SqliteCommand command = new SqliteCommand(sql, connection);
             command.Parameters.AddWithValue("@idAutor", articulo.IdAutor);
             command.Parameters.AddWithValue("@idSeccion", articulo.IdSeccion);
             command.Parameters.AddWithValue("@titulo", articulo.Titulo);
@@ -99,7 +98,7 @@ namespace GestorRestReview
         public int DeleteArticulo(int id)
         {
             int rowsAffected = 0;
-            using (var command = new SQLiteCommand(connection))
+            using (var command = new SqliteCommand(connection))
             {
                 command.CommandText = "DELETE FROM articulos WHERE id = @id";
                 command.Parameters.AddWithValue("@id", id);
