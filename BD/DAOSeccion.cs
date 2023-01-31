@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace GestorRestReview.BD
 {
-    public class SeccionDAO
+    public class DAOSeccion
     {
         private SQLiteConnection connection;
         private string _connectionString;
 
 
-        public SeccionDAO()
+        public DAOSeccion()
         {
             _connectionString = "Data Source=BDRevista.db";
             connection = new SQLiteConnection(_connectionString);
@@ -132,12 +132,12 @@ namespace GestorRestReview.BD
             }
         }
 
-        public void DeleteSeccion(Seccion seccion)
+        public void DeleteSeccion(int id)
         {
             using (var command = connection.CreateCommand())
             {
                 command.CommandText = "DELETE FROM secciones WHERE id = @id";
-                command.Parameters.AddWithValue("@id", seccion.Id);
+                command.Parameters.AddWithValue("@id", id);
 
                 try
                 {

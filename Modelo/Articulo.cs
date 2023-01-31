@@ -7,9 +7,21 @@ using System.Threading.Tasks;
 
 namespace GestorRestReview.Modelo
 {
-    public class Articulo 
+    public class Articulo : ObservableObject
     {
+
+        // Ver como de factible es de poner aqui una propiedad que contenga un objeto Autor al que hace refencia
+        // Getters y Setters
         private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { SetProperty(ref id, value); }
+        }
+
+        // Hacer para el resto de las propiedades y objetos
+
         private int idAutor;
         private int idSeccion;
         private string texto;
@@ -33,42 +45,9 @@ namespace GestorRestReview.Modelo
             this.imagen = imagen;
         }
 
-        // Getters y Setters
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
-        public int IdAutor
-        {
-            get { return idAutor; }
-            set { idAutor = value; }
-        }
+        // To String y demas metodos de utilidad son necesarios
 
-        public int IdSeccion
-        {
-            get { return idSeccion; }
-            set { idSeccion = value; }
-        }
-
-        public string Texto
-        {
-            get { return texto; }
-            set { texto = value; }
-        }
-
-        public string Titulo
-        {
-            get { return titulo; }
-            set { titulo = value; }
-        }
-
-        public string Imagen
-        {
-            get { return imagen; }
-            set { imagen = value; }
-        }
 
 
     }

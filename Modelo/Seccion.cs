@@ -7,9 +7,18 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace GestorRestReview.Modelo
 {
-    public class Seccion
+    public class Seccion : ObservableObject
     {
+        // Getters y Setters
+        // Investigar como de posible es de usar aqui un arraylist que se complete cuando se hace una llmada al DAO para poder usar un mismo objeto Seccion para ver todos los articulos
+
         private int id;
+        public int Id
+        {
+            get { return id; }
+            set { SetProperty(ref id, value); }
+        }
+
         private string nombre;
         private string descripcion;
 
@@ -24,23 +33,7 @@ namespace GestorRestReview.Modelo
             this.descripcion = descripcion;
         }
 
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-
-        public string Descripcion
-        {
-            get { return descripcion; }
-            set { descripcion = value; }
-        }
+       
     }
 
 
