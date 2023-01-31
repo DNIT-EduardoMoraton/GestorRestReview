@@ -1,10 +1,11 @@
-﻿using GestorRestReview.BD;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
+using GestorRestReview.BD;
 using GestorRestReview.Mensajes.Difusion;
 using GestorRestReview.Modelo;
 using GestorRestReview.Servicios;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
-using Microsoft.Toolkit.Mvvm.Messaging;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,15 @@ namespace GestorRestReview.Vistas.UserControls.ArticulosLista
         }
 
 
+        private List<Articulo> listaArticulosActual;
+
+        public List<Articulo> ListaArticulosActual
+        {
+            get { return listaArticulosActual; }
+            set { SetProperty(ref listaArticulosActual, value); }
+        }
+
+
         // Commands
 
         public RelayCommand AnyadirArticuloCommand { get; set; }
@@ -38,6 +48,7 @@ namespace GestorRestReview.Vistas.UserControls.ArticulosLista
         public ArticulosListaUserControlVM()
         {
             servicioNavegacion = new NavegacionServicio();
+            servicioArticulos = new ArticuloService();
             InicioPorDefecto();
 
             ManejadorCommands();
@@ -46,7 +57,7 @@ namespace GestorRestReview.Vistas.UserControls.ArticulosLista
 
         private void InicioPorDefecto()
         {
-
+            ListaArticulosActual = servicioArticulos.getAll();
         }
 
         private void ManejadorCommands()

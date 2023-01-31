@@ -1,6 +1,8 @@
-﻿using GestorRestReview.Servicios;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using GestorRestReview.BD;
+using GestorRestReview.Servicios;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,7 @@ namespace GestorRestReview.Vistas.UserControls.Home
     class HomeUserControlVM : ObservableRecipient
     {
         private UserControl actualUserControl;
+        private BDRevista bd;
 
         public UserControl ActualUserControl
         {
@@ -31,6 +34,9 @@ namespace GestorRestReview.Vistas.UserControls.Home
 
         public HomeUserControlVM()
         {
+            bd = new BDRevista();
+            bd.inicializar();
+
             servicioNavegacion = new NavegacionServicio();
             InicioPorDefecto();
 

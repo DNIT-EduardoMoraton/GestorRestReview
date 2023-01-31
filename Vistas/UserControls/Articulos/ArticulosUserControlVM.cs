@@ -1,7 +1,9 @@
-﻿using Microsoft.Toolkit.Mvvm.Messaging;
+﻿
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Messaging;
 using GestorRestReview.Mensajes.Difusion;
 using GestorRestReview.Servicios;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
+
 using System.Windows.Controls;
 
 namespace GestorRestReview.Vistas.UserControls.Articulos
