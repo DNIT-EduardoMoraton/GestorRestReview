@@ -1,28 +1,26 @@
-﻿using GestorRestReview.Servicios;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 
-namespace GestorRestReview.Vistas.UserControls.Home
+namespace GestorRestReview.Vistas.UserControls.HomeWebPreview
 {
-    class HomeUserControlVM : ObservableRecipient
+    class HomeWebPreviewUserControlVM : ObservableRecipient
     {
-        private UserControl actualUserControl;
+        private string hTMLRuta;
 
-        public UserControl ActualUserControl
+        public string HTMLRuta
         {
-            get { return actualUserControl; }
-            set { SetProperty(ref actualUserControl, value); }
+            get { return hTMLRuta; }
+            set { SetProperty(ref hTMLRuta, value); }
         }
 
         // Commands
 
-        public RelayCommand ArticuloComand { get; set; }
+        public RelayCommand ArticuloComand { get; set; } // Son solo muestras no son de aqui
         public RelayCommand HomeWebPreview { get; set; }
 
         // Services
@@ -41,7 +39,7 @@ namespace GestorRestReview.Vistas.UserControls.Home
         private void InicioPorDefecto()
         {
             ActualUserControl = servicioNavegacion.IrHomeWebPreviewUserControl();
-           
+
         }
 
         private void ManejadorCommands()
@@ -52,14 +50,11 @@ namespace GestorRestReview.Vistas.UserControls.Home
 
         // Commands Funcs
 
-        private void ArticuloCommandFun()
-        {
-            ActualUserControl = servicioNavegacion.IrArticulosUserControl(); // ver que no se tiene que eliminar
-        }
+
 
         private void HomeWebPreviewFun()
         {
-            ActualUserControl = servicioNavegacion.IrHomeWebPreviewUserControl();
+
         }
     }
 }

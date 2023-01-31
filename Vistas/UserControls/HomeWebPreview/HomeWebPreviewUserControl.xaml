@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="GestorRestReview.Vistas.UserControls.HomeWebPreview.HomeWebPreview"
+﻿<UserControl x:Class="GestorRestReview.Vistas.UserControls.HomeWebPreview.HomeWebPreviewUserControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:GestorRestReview.Vistas.UserControls.HomeWebPreview"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="BLUE">
-        <TextBlock x:Name="texto">Home Web Preview</TextBlock>
+    <Grid>
+        <WebBrowser Source="{Binding Path=HTMLRuta}" ></WebBrowser>
     </Grid>
 </UserControl>

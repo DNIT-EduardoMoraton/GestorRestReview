@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace GestorRestReview.Vistas.UserControls.HomeWebPreview
 {
     /// <summary>
-    /// Lógica de interacción para HomeWebPreview.xaml
+    /// Lógica de interacción para HomeWebPreviewUserControl.xaml
     /// </summary>
-    public partial class HomeWebPreview : UserControl
+    public partial class HomeWebPreviewUserControl : UserControl
     {
-        public HomeWebPreview()
+        public HomeWebPreviewUserControl()
         {
             InitializeComponent();
-
-            DAOArticulos hola = new DAOArticulos();
-
-            
-
-
         }
     }
 }

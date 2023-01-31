@@ -25,9 +25,9 @@ namespace GestorRestReview.Servicios
             return new HomeUserControl();
         }
 
-        public HomeWebPreview IrHomeWebPreview()
+        public HomeWebPreviewUserControl IrHomeWebPreviewUserControl()
         {
-            return new HomeWebPreview();
+            return new HomeWebPreviewUserControl();
         }
 
         // Articulos ----------------------------------------------------

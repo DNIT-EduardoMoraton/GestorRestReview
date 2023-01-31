@@ -197,9 +197,10 @@
       <DependentUpon>ExampleUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\UserControls\Example\ExampleUserControlVM.cs" />
-    <Compile Include="Vistas\UserControls\HomeWebPreview\HomeWebPreview.xaml.cs">
-      <DependentUpon>HomeWebPreview.xaml</DependentUpon>
+    <Compile Include="Vistas\UserControls\HomeWebPreview\HomeWebPreviewUserControl.xaml.cs">
+      <DependentUpon>HomeWebPreviewUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\UserControls\HomeWebPreview\HomeWebPreviewUserControlVM.cs" />
     <Compile Include="Vistas\UserControls\Home\HomeUserControl.xaml.cs">
       <DependentUpon>HomeUserControl.xaml</DependentUpon>
     </Compile>
@@ -238,7 +239,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\UserControls\HomeWebPreview\HomeWebPreview.xaml">
+    <Page Include="Vistas\UserControls\HomeWebPreview\HomeWebPreviewUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -293,7 +294,9 @@
   <ItemGroup>
     <Resource Include="Assets\cat_0.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Assets\web\webplantilla.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
