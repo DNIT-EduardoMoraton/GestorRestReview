@@ -1,5 +1,6 @@
 ﻿
 using CommunityToolkit.Mvvm.ComponentModel;
+using GestorRestReview.BD.Convertidores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +9,13 @@ using System.Threading.Tasks;
 
 namespace GestorRestReview.Modelo
 {
-    class Articulo : ObservableObject
+    class Articulo :  ArticuloEntity
     {
-        private int id;
 
-        public int Id
-        {
-            get { return id; }
-            set { SetProperty(ref id, value); }
-        }
+
+        private static readonly DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+        // Lo unico que cambia aqui es que ahora nos guardamo una instancia de objeto de el autor ademas del indice
 
         private int autor;
 
@@ -26,46 +25,20 @@ namespace GestorRestReview.Modelo
             set { SetProperty(ref autor, value); }
         }
 
-        private int idSeccion;
+        // Conversiones de fechas importantes
 
-        public int IdSeccion
+        public DateTime fechaPublicacionDate;
+        public DateTime FechaPublicacionDate
         {
-            get { return idSeccion; }
-            set { SetProperty(ref idSeccion, value); }
+            get { return epoch.AddSeconds(this.FechaPublicacion);  }
+            set {
+
+                this.FechaPublicacion = (long)(value.ToUniversalTime() - epoch).TotalSeconds;
+                SetProperty(ref fechaPublicacionDate, value); 
+            }
         }
 
-        private string texto;
-
-        public string Texto
-        {
-            get { return texto; }
-            set { SetProperty(ref texto, value); }
-        }
-
-        private string titulo;
-
-        public string Titulo
-        {
-            get { return titulo; }
-            set { SetProperty(ref titulo, value); }
-        }
-
-        private string imagen;
-
-        public string Imagen
-        {
-            get { return imagen; }
-            set { SetProperty(ref imagen, value); }
-        }
-
-        public DateTime fechaPublicacion;
-        public DateTime FechaPublicacion
-        {
-            get { return fechaPublicacion; }
-            set { SetProperty(ref fechaPublicacion, value); }
-        }
-
-        public Articulo(int id, int autor, int idSeccion, string texto, string titulo, string imagen, DateTime fechaPublicacion)
+        public Articulo(int id, int autor, int idSeccion, string texto, string titulo, string imagen, DateTime fechaPublicacionDate)
         {
             Id = id;
             Autor = autor;

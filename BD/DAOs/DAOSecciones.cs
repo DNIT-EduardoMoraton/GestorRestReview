@@ -50,5 +50,26 @@ namespace GestorRestReview.BD.DAOs
 
         }
 
+        public List<SeccionEntity> getAll()
+        {
+            List<SeccionEntity> sections = new List<SeccionEntity>();
+            SqliteConnection con = bd.getNewConnection();
+            con.Open();
+            SqliteCommand cmd = con.CreateCommand();
+            cmd.CommandText = "SELECT * FROM Secciones";
+            SqliteDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                SeccionEntity section = new SeccionEntity();
+                section.Id = reader.GetInt32(0);
+                section.Nombre = reader.GetString(1);
+                section.Descripcion = reader.GetString(2);
+                sections.Add(section);
+            }
+            con.Close();
+            return sections;
+        }
+
+        
     }
 }

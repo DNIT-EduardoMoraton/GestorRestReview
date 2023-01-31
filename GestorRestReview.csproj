@@ -64,7 +64,7 @@
     <Compile Include="BD\DAOs\DAOArticulos.cs" />
     <Compile Include="BD\DAOs\DAOAutores.cs" />
     <Compile Include="BD\DAOs\DAOSecciones.cs" />
-    <Compile Include="Servicios\Convertidores\EpochTimeConverter.cs" />
+    <Compile Include="Modelo\Convertidores\EpochTimeConverter.cs" />
     <Compile Include="Mensajes\Difusion\ArticuloNavValueChangedMesage.cs" />
     <Compile Include="Modelo\Articulo.cs" />
     <Compile Include="Modelo\Autor.cs" />
@@ -102,6 +102,12 @@
       <DependentUpon>HomeUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\UserControls\Home\HomeUserControlVM.cs" />
+    <Compile Include="Vistas\Windows\Dialogos\DialogoNuevaSeccion\DialogoNuevaSeccionWindow.xaml.cs">
+      <DependentUpon>DialogoNuevaSeccionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Windows\Dialogos\DialogoNuevoAutor\DialogoAutorWindow.xaml.cs">
+      <DependentUpon>DialogoAutorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Windows\Example\ExampleWindow.xaml.cs">
       <DependentUpon>ExampleWindow.xaml</DependentUpon>
     </Compile>
@@ -141,6 +147,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\UserControls\Home\HomeUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Windows\Dialogos\DialogoNuevaSeccion\DialogoNuevaSeccionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Windows\Dialogos\DialogoNuevoAutor\DialogoAutorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
