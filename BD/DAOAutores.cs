@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using GestorRestReview.Modelo;
+using Microsoft.Data.Sqlite;
 
 namespace GestorRestReview.BD
 {
@@ -31,8 +32,8 @@ namespace GestorRestReview.BD
         {
             List<Autor> autores = new List<Autor>();
             string query = "SELECT * FROM Autores";
-            SQLiteCommand command = new SQLiteCommand(query, conexion);
-            SQLiteDataReader reader = command.ExecuteReader();
+            SqliteCommand command = new SqliteCommand(query, conexion);
+            SqliteDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
@@ -53,7 +54,7 @@ namespace GestorRestReview.BD
 
         public Autor GetOneAutor(int id)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(conexion))
+            using (SqliteConnection connection = new SqliteConnection(conexion))
             {
                 connection.Open();
 
@@ -62,7 +63,7 @@ namespace GestorRestReview.BD
                     command.CommandText = "SELECT * FROM Autores WHERE id = @id";
                     command.Parameters.AddWithValue("@id", id);
 
-                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    using (SqliteDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
