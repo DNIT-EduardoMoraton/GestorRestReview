@@ -1,4 +1,5 @@
 ﻿using GestorRestReview.Modelo;
+using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -71,7 +72,7 @@ namespace GestorRestReview
         {
             // Inserta un nuevo articulo en la tabla
             string sql = "INSERT INTO articulos (idAutor, idSeccion, titulo, texto, imagen) VALUES (@idAutor, @idSeccion, @titulo, @texto, @imagen)";
-            SQLiteCommand command = new SQLiteCommand(sql, connection);
+            SQliteCommand command = new SQLiteCommand(sql, connection);
             command.Parameters.AddWithValue("@idAutor", articulo.IdAutor);
             command.Parameters.AddWithValue("@idSeccion", articulo.IdSeccion);
             command.Parameters.AddWithValue("@titulo", articulo.Titulo);
