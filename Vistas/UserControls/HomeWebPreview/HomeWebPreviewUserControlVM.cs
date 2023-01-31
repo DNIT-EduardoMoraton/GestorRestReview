@@ -39,7 +39,7 @@ namespace GestorRestReview.Vistas.UserControls.HomeWebPreview
 
         private void InicioPorDefecto()
         {
-            HTMLRuta = ""
+            HTMLRuta = "";
 
         }
 
