@@ -1,4 +1,5 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using GestorRestReview.Servicios;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace GestorRestReview.Vistas.UserControls.HomeWebPreview
 
         private NavegacionServicio servicioNavegacion;
 
-        public HomeUserControlVM()
+        public HomeWebPreviewUserControlVM()
         {
             servicioNavegacion = new NavegacionServicio();
             InicioPorDefecto();
@@ -38,19 +39,16 @@ namespace GestorRestReview.Vistas.UserControls.HomeWebPreview
 
         private void InicioPorDefecto()
         {
-            ActualUserControl = servicioNavegacion.IrHomeWebPreviewUserControl();
+            HTMLRuta = ""
 
         }
 
         private void ManejadorCommands()
         {
-            ArticuloComand = new RelayCommand(ArticuloCommandFun);
-            HomeWebPreview = new RelayCommand(HomeWebPreviewFun);
+
         }
 
         // Commands Funcs
-
-
 
         private void HomeWebPreviewFun()
         {
