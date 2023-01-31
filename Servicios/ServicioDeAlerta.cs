@@ -29,7 +29,7 @@ namespace GestorRestReview.Servicios
         }
         public bool MessageBoxError(string mensajeError)
         {
-            MessageBoxResult result = MessageBox.Show(mensajeError, "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            MessageBoxResult result = MessageBox.Show(mensajeError, "Error", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             return true;
         }

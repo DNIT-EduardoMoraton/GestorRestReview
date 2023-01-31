@@ -158,6 +158,7 @@
     <Compile Include="Modelo\Articulo.cs" />
     <Compile Include="Modelo\Autor.cs" />
     <Compile Include="Modelo\Seccion.cs" />
+    <Compile Include="Servicios\BlobStorage.cs" />
     <Compile Include="Servicios\ExampleService.cs" />
     <Compile Include="Servicios\NavegacionServicio.cs" />
     <Compile Include="Servicios\ServicioDeAlerta.cs" />
