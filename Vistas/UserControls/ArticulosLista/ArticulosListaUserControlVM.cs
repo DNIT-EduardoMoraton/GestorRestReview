@@ -1,4 +1,5 @@
-﻿using GestorRestReview.Mensajes.Difusion;
+﻿using GestorRestReview.BD;
+using GestorRestReview.Mensajes.Difusion;
 using GestorRestReview.Modelo;
 using GestorRestReview.Servicios;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
@@ -32,6 +33,7 @@ namespace GestorRestReview.Vistas.UserControls.ArticulosLista
         // Services
 
         private NavegacionServicio servicioNavegacion;
+        private ArticuloService servicioArticulos;
 
         public ArticulosListaUserControlVM()
         {
